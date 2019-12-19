@@ -13,7 +13,7 @@ Sites referencias:
 
 Comandos usados:
 - IONIC 4
-    //comento para criar paginas no projeto
+    //comando para criar paginas no projeto
     - ionic generate page pages/home
     - ionic ganerate pape pages/login
 
