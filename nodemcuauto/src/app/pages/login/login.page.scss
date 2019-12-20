@@ -1,3 +1,23 @@
+ion-slides{
+    height: 94%;
+
+    .slider-inner{
+        width: 75%;
+        color: #2c3e50;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+     
+        ion-item{
+            --color: #2c3e50;
+            --border-radius: 10px;
+        }
+
+        ion-button{
+            --border-radius: 10px;
+        }
+    }
+}
+
 .fundo{
     position: absolute;
     left: 0;
@@ -12,6 +32,8 @@
         right: 0;
         bottom: 0;
         height: 15%;
+        width: 75%;
+        margin: 0 auto;
         color: #dfe6e9;
     }
 

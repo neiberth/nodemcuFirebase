@@ -9,7 +9,7 @@ Projeto: automação com NodeMCU, Firebase e Ionic 4
 *projeto foi criado em cima do blank
 
 Sites referencias: 
-
+    - https://ionicframework.com/docs
 
 Comandos usados:
 - IONIC 4
