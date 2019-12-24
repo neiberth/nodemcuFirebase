@@ -6,11 +6,11 @@
         <span>Login</span>
 
         <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="email" placeholder="E-mail"></ion-input>
+          <ion-input type="email" placeholder="E-mail" [(ngModel)]="UserLogin.email"></ion-input>
         </ion-item>
 
         <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="password" placeholder="Senha"></ion-input>
+          <ion-input type="password" placeholder="Senha" [(ngModel)]="UserLogin.password"></ion-input>
         </ion-item>
 
         <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
@@ -24,14 +24,14 @@
         <span>Cadastro</span>
 
         <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="email" placeholder="E-mail"></ion-input>
+          <ion-input type="email" placeholder="E-mail" [(ngModel)]="UserRegistro.email"></ion-input>
         </ion-item>
 
         <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="password" placeholder="Senha"></ion-input>
+          <ion-input type="password" placeholder="Senha" [(ngModel)]="UserRegistro.password"></ion-input>
         </ion-item>
 
-        <ion-button class="ion-margin-top" (click)="novo()" color="success" expand="block">
+        <ion-button class="ion-margin-top" (click)="registro()" color="success" expand="block">
           Novo Cadastro
         </ion-button>
       </div>
@@ -40,7 +40,7 @@
   </ion-slides>
 
   <div class="fundo">
-    <div class="conteiner ion-text-center">
+    <div class="conteiner ion-text-center" [hidden]="Keyboard.isVisible">
       <span>
         Projeto NodeMCU com Firebase <br>
         Versão: 0.0.1 <br>

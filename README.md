@@ -10,11 +10,20 @@ Projeto: automação com NodeMCU, Firebase e Ionic 4
 
 Sites referencias: 
     - https://ionicframework.com/docs
+    - https://github.com/angular/angularfire
 
 Comandos usados:
 - IONIC 4
     //comando para criar paginas no projeto
     - ionic generate page pages/home
-    - ionic ganerate pape pages/login
+    - ionic generate pape pages/login
+    - ionic generate inferface interfaces/user
+    - ionic generate service services/auth
 
-Bibliotecas Usadas:
+ 
+Bibliotecas/Plugin Usadas:
+*keyboard
+- ionic cordova plugin add cordova-plugin-ionic-keyboard
+- npm install @ionic-native/keyboard
+*Angular/angulafire
+- npm install firebase @angular/fire --save
