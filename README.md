@@ -17,13 +17,20 @@ Comandos usados:
     //comando para criar paginas no projeto
     - ionic generate page pages/home
     - ionic generate pape pages/login
-    - ionic generate inferface interfaces/user
+    - ionic generate interface interfaces/user
     - ionic generate service services/auth
+    - ionic generate guard guards/auth
+    - ionic generate guard guards/login
+    
+    - ionic generate interface interfaces/sensor
+    - ionic generate service services/sensor
 
- 
 Bibliotecas/Plugin Usadas:
+//
 *keyboard
-- ionic cordova plugin add cordova-plugin-ionic-keyboard
-- npm install @ionic-native/keyboard
+     - ionic cordova plugin add cordova-plugin-ionic-keyboard
+     - npm install @ionic-native/keyboard
+//
 *Angular/angulafire
-- npm install firebase @angular/fire --save
+     - npm install firebase @angular/fire --save
+     - npm install --save firebase

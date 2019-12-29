@@ -13,6 +13,7 @@ import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 
 @NgModule({
@@ -23,13 +24,15 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     IonicModule.forRoot(), 
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Keyboard,
+    AngularFireDatabase,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Keyboard
+    
   ],
   bootstrap: [AppComponent]
 })

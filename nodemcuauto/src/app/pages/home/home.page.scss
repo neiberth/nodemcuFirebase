@@ -1,0 +1,21 @@
+.titulo{
+    --background: var(--ion-color-primary-tint);
+    --color: #dfe6e9;
+}
+ion-card{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    background: #fff;
+    z-index: 1;
+   
+}
+.fundo{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-image: url(../../../assets/img/fundoF.png);
+}

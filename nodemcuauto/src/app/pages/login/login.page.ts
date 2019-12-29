@@ -10,6 +10,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  
   public UserLogin: User = {};
   public UserRegistro: User = {};
   public loading: any;
@@ -24,23 +25,81 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  login() { }
-
-  async registro() {
+  async login() {
     await this.presentLoading();
+
     try {
-      await this.authService.registro(this.UserRegistro);
+      await this.authService.login(this.UserLogin);
     } catch (error) {
-      console.error(error);
+      let message: string;
+
+      switch (error.code) {
+        case "auth/argument-error":
+          message = "Email e Senha em branco";
+          break;
+
+        case "auth/invalid-email":
+          message = "Email invalido";
+          break;
+
+        case "auth/email-already-in-use":
+          message = "Email já cadastrado";
+          break;
+
+        case "auth/weak-password":
+          message = "Senha em branco";
+          break;
+      }
+      this.presentToast(message);
     } finally {
       this.loading.dismiss();
     }
 
   }
 
+  async registro() {
+    await this.presentLoading();
+
+    try {
+      await this.authService.registro(this.UserRegistro);
+    } catch (error) {
+      let message: string;
+
+      switch (error.code) {
+        case "auth/argument-error":
+          message = "Email e Senha em branco";
+          break;
+
+        case "auth/invalid-email":
+          message = "Email invalido";
+          break;
+
+        case "auth/email-already-in-use":
+          message = "Email já cadastrado";
+          break;
+
+        case "auth/weak-password":
+          message = "Senha em branco";
+          break;
+      }
+      this.presentToast(message);
+    } finally {
+      this.loading.dismiss();
+    }
+  }
+
   async presentLoading() {
     this.loading = await this.loadingController.create({ message: 'Por favor, Aguarde...' });
     return this.loading.present();
+  }
 
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      color: "warning",
+      position: 'top',
+    });
+    toast.present();
   }
 }

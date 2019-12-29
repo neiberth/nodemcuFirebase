@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private afa: AngularFireAuth) { }
 
   login(user: User){
-
+    return this.afa.auth.signInWithEmailAndPassword(user.email, user.password);
   }
 
   registro(user: User){
@@ -18,10 +18,10 @@ export class AuthService {
   }
 
   logout(){
-
+    return this.afa.auth.signOut();
   }
 
-  getLogin(){
-
+  getAuth(){
+    return this.afa.auth;
   }
 }
